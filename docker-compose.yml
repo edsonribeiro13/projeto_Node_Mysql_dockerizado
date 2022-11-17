@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+    ts-node-docker:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+        volumes:
+            - ./src:/home/node/app/src
+            - ./nodemon.json:/home/node/app/nodemon.json
+        container_name: ng-node-docker
+        expose:
+            - '10109'
+        ports:
+            - '10109:10109'
+        command: yarn dev
