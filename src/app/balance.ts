@@ -1,13 +1,8 @@
 import accountModel from '../repository/model/accountModel'
 import userModel from '../repository/model/userModel'
-import jwt from 'jsonwebtoken'
+import detoken from './util/detoken'
 export default async (token: string) => {
-    let tokenDecoded
-    try {
-        tokenDecoded = Object(jwt.verify(token, String(process.env.SECRET)))
-    } catch {
-        return 'Token inválido'
-    }
+    const tokenDecoded = await detoken(token)
 
     const userId = await userModel().findOne({
         where: {

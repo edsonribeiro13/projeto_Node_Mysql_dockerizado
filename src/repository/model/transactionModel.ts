@@ -32,6 +32,7 @@ export default () => {
         },
         createdAt: {
             type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
         },
     })
     sequelize().close
