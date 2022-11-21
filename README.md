@@ -7,7 +7,7 @@ O projeto consiste em um desafio proposto pela NG.CASH, que tem como especifica�
 Para que seja possível executar a aplicação é necessário possuir os seguintes pacotes:
 
 -   [Docker](https://www.docker.com)
--   [YARN](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)
+-   [YARN](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable)<br>
     É recomendado instalar o Yarn pelo NPM e o NPM pelo NVM
 -   [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 -   [NVM](https://github.com/nvm-sh/nvm)
@@ -23,3 +23,6 @@ Por aqui que o serviço e a imagem irão se comunicar, atráves de uma rede inte
 ### MYSQL e Node
 
 O próximo passo é iniciar o ambiente node e mysql, para essa etapa basta utilizar o comando `yarn compose`, caso não deseje visualizar a execução da aplicação e acompanhar os logs utilize `yarn compose -d`
+
+# Uso
+Pode ser tanto conectado a uma aplicação front-end na arquitetura desejada pelo desenvolvedor (como módulo a parte, importando os arquivos, etc), ou para validações no ponto de entrada index, chamando os métodos e testando as funções
