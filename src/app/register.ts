@@ -27,7 +27,7 @@ export default async (username: string, password: string) => {
             Accounts_idAccounts: resultId?.dataValues.idAccounts + 1 || 1,
         })
         await accountModel().create()
-        const token = jwt.sign({ username }, String(process.env.secret), {
+        const token = jwt.sign({ username }, String(process.env.SECRET), {
             expiresIn: 86400,
         })
         return token

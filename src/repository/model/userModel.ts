@@ -23,7 +23,7 @@ export default () => {
     account().hasOne(user, {
         as: 'Accounts_idAccounts',
         constraints: false,
-        foreignKey: 'idAccounts',
+        foreignKey: 'Accounts_idAccounts',
     })
     sequelize().close()
     return user

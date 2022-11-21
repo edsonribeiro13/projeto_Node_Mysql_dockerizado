@@ -17,9 +17,13 @@ export default async (username: string, password: string) => {
 
         if (hashResponse === true) {
             const userName = userFromDataBase.dataValues.userName
-            const token = jwt.sign({ userName }, String(process.env.secret), {
-                expiresIn: 86400,
-            })
+            const token = jwt.sign(
+                { username: userName },
+                String(process.env.SECRET),
+                {
+                    expiresIn: 86400,
+                }
+            )
             return token
         } else {
             return 'senha incorreta'
