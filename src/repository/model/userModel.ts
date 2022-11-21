@@ -12,10 +12,11 @@ export default () => {
         },
         userName: {
             type: DataTypes.STRING(45),
+            unique: true,
             allowNull: false,
         },
         password: {
-            type: DataTypes.STRING(45),
+            type: DataTypes.STRING,
             allowNull: false,
         },
         Accounts_idAccounts: {

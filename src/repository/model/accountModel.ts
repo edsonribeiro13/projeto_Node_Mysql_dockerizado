@@ -11,6 +11,7 @@ export default () => {
         },
         balance: {
             type: DataTypes.FLOAT,
+            defaultValue: 100,
             allowNull: false,
         },
     })

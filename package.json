@@ -6,6 +6,7 @@
     "author": "edson.viniciussr@gmail.com",
     "license": "MIT",
     "devDependencies": {
+        "@types/bcrypt": "^5.0.0",
         "@types/express": "^4.17.14",
         "@typescript-eslint/eslint-plugin": "^5.43.0",
         "@typescript-eslint/parser": "^5.43.0",
@@ -17,6 +18,7 @@
         "typescript": "^4.9.3"
     },
     "dependencies": {
+        "bcrypt": "^5.1.0",
         "express": "^4.18.2",
         "mysql2": "^2.3.3",
         "sequelize": "^6.25.6"
@@ -29,6 +31,6 @@
         "composeProd": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
         "start": "NODE_PATH=./build node build/index.js",
         "build": "tsc -p .",
-        "dev": "nodemon src/index.ts"
+        "dev": "nodemon index.ts"
     }
 }
