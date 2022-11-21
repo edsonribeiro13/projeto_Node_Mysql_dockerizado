@@ -1,6 +1,20 @@
 version: '3.7'
 
 services:
+    mysql:
+        container_name: mysql
+        restart: always
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: 'admin'
+            MYSQL_DATABASE: 'NGDB'
+        volumes:
+            - /var/lib/mysql
+        expose:
+            - '33360'
+        ports:
+            - '33360:3306'
+
     ts-node-docker:
         build:
             context: .
@@ -15,6 +29,8 @@ services:
         ports:
             - '10109:10109'
         command: yarn dev
+        depends_on:
+            - mysql
 
 networks:
     default:
