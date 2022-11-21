@@ -1,10 +1,15 @@
 import { Sequelize } from 'sequelize'
 
 export default () => {
-    const sequelize = new Sequelize('NGDB', 'root', 'admin', {
-        host: '172.28.5.254',
-        port: 33360,
-        dialect: 'mysql',
-    })
+    const sequelize = new Sequelize(
+        String(process.env.DB),
+        String(process.env.DBUSER),
+        String(process.env.DBPASSWORD),
+        {
+            host: String(process.env.DBADRESS),
+            port: parseInt(String(process.env.DBPORT)),
+            dialect: 'mysql',
+        }
+    )
     return sequelize
 }

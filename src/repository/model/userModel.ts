@@ -19,14 +19,11 @@ export default () => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Accounts_idAccounts: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: account(),
-                key: 'idAccounts',
-            },
-        },
+    })
+    account().hasOne(user, {
+        as: 'Accounts_idAccounts',
+        constraints: false,
+        foreignKey: 'idAccounts',
     })
     sequelize().close()
     return user

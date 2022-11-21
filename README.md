@@ -14,6 +14,8 @@ Para que seja possível executar a aplicação é necessário possuir os seguint
 
 # Configuração do ambiente
 
+Para começar é necessário copiar o arquivo `.env.example` no mesmo local, após isso deve renomear a cópia para `.env`
+
 ### Network
 
 Por aqui que o serviço e a imagem irão se comunicar, atráves de uma rede interna do docker, para criar essa rede o comando é: `yarn network`
