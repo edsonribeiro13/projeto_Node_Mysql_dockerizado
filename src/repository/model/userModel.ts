@@ -1,8 +1,8 @@
-const { DataTypes } = require('sequelize')
-const sequelize = require('../connection')
-const account = require('./accountModel')
+import { DataTypes } from 'sequelize'
+import sequelize from '../connection'
+import account from './accountModel'
 
-const user = () => {
+export default () => {
     const user = sequelize().define('Users', {
         idUsers: {
             type: DataTypes.INTEGER,
@@ -30,5 +30,3 @@ const user = () => {
     sequelize().close()
     return user
 }
-
-module.exports = user

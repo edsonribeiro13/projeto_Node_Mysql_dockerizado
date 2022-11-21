@@ -1,6 +1,6 @@
-const { Sequelize } = require('sequelize')
+import { Sequelize } from 'sequelize'
 
-const connection = () => {
+export default () => {
     const sequelize = new Sequelize('NGDB', 'root', 'admin', {
         host: '172.28.5.254',
         port: 33360,
@@ -8,5 +8,3 @@ const connection = () => {
     })
     return sequelize
 }
-
-module.exports = connection
