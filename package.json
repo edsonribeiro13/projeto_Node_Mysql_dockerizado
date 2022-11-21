@@ -24,8 +24,9 @@
     "scripts": {
         "format": "prettier --write .",
         "lint": "eslint .",
-        "compose dev": "docker-compose build && docker-compose up -d",
-        "compose prod": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d",
+        "network": "docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.5.254 ng_network",
+        "composeDev": "docker-compose build && docker-compose up",
+        "composeProd": "docker-compose -f docker-compose.yml -f docker-compose.prod.yml up",
         "start": "NODE_PATH=./build node build/index.js",
         "build": "tsc -p .",
         "dev": "nodemon src/index.ts"

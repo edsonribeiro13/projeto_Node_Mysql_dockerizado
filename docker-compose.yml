@@ -15,3 +15,7 @@ services:
         ports:
             - '10109:10109'
         command: yarn dev
+
+networks:
+    default:
+        name: ng_network

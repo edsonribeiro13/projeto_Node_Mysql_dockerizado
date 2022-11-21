@@ -14,10 +14,14 @@ Para que seja possível executar a aplicação é necessário possuir os seguint
 
 # Configuração do ambiente
 
+### Network
+
+Por aqui que o serviço e a imagem irão se comunicar, atráves de uma rede interna do docker, para criar essa rede o comando é: `yarn network`
+
 ### MYSQL
 
-primeiro é necessário preparar o ambiente do banco de dados que será utilizado, para essa tarefa o banco utilizado é o banco relacional MYSQL, que possui uma imagem oficial no docker hub, o que facilita o processo. O primeiro comando utilizado será: `docker pull mysql` que tornará a instância disponível localmente e `docker run --name NGCASH -e MYSQL_ROOT_PASSWORD=NGAdmin -d mysql` que iniciará a instância no ambiente local.
+Primeiro é necessário preparar o ambiente do banco de dados que será utilizado, para essa tarefa o banco utilizado é o banco relacional MYSQL, que possui uma imagem oficial no docker hub, o que facilita o processo. O primeiro comando utilizado será: `docker pull mysql` que tornará a instância disponível localmente e `docker run --network=ng_network --detach --name=NGDB -p 33360:3306 -e="MYSQL_ROOT_PASSWORD=admin" -e="MYSQL_DATABASE=NGDB" mysql` que iniciará a instância no ambiente local.
 
 ### Node
 
-O próximo passo é iniciar o ambiente node, para essa etapa basta utilizar o comando `yarn compose prod` caso a necessidade seja apenas vizualizar a aplicação de forma funcional ou `yarn compose dev` para iniciar o ambiente em modo dev que permite ao desenvolvedor trabalhar no código e visualizar as suas alterações em tempo real
+O próximo passo é iniciar o ambiente node, para essa etapa basta utilizar o comando `yarn composeProd` caso a necessidade seja apenas vizualizar a aplicação de forma funcional ou `yarn composeDev` para iniciar o ambiente em modo dev que permite ao desenvolvedor trabalhar no código e visualizar as suas alterações em tempo real
