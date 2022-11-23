@@ -7,7 +7,7 @@ services:
         image: mysql:latest
         environment:
             MYSQL_ROOT_PASSWORD: 'admin'
-            MYSQL_DATABASE: 'NGDB'
+            MYSQL_DATABASE: 'MYDB'
         volumes:
             - /var/lib/mysql
         expose:
@@ -23,7 +23,7 @@ services:
         volumes:
             - ./src:/home/node/app/src
             - ./nodemon.json:/home/node/app/nodemon.json
-        container_name: ng-node-docker
+        container_name: ts-node-docker
         expose:
             - '10109'
         ports:
@@ -34,4 +34,4 @@ services:
 
 networks:
     default:
-        name: ng_network
+        name: node_mysql_network

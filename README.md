@@ -1,6 +1,8 @@
-# Projeto NG backend
+# Projeto backend dockerizado
 
-O projeto consiste em um desafio proposto pela NG.CASH, que tem como especificação dada pela própria empresa:<br> `Estruturar uma aplicação web fullstack, dockerizada, cujo objetivo seja possibilitar que usuários da NG consigam realizar transferências internas entre si.`
+O projeto consiste em um desafio, que tem como especificação dada:<br> 
+`Estruturar uma aplicação web fullstack, dockerizada, cujo objetivo seja possibilitar que usuários consigam realizar transferências internas entre si.`.<br>
+Desse projeto produzi o backend que pode servir de base ou conhecimento para outras aplicações
 
 # Requisitos básicos de instalação
 
