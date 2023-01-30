@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize'
-import Connection from '../connection'
+import Connection from '../src/repository/connection'
 
 export default () => {
-    const product = Connection.getConnection().define('Product', {
+    const product = Connection.getConnection().define('Products', {
         idProduct: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

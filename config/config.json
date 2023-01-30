@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "root",
+    "password": "admin",
+    "database": "sable",
+    "host": "172.28.5.254",
+    "port": 33360,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "admin",
+    "database": "sable",
+    "host": "172.28.5.254",
+    "port": 33360,
+    "dialect": "mysql"
+  }
+}

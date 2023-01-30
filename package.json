@@ -32,6 +32,7 @@
         "compose": "docker-compose build && docker-compose up",
         "start": "NODE_PATH=./build node build/index.js",
         "build": "tsc -p .",
-        "dev": "nodemon index.ts"
+        "dev": "nodemon index.ts",
+        "migrate": "npx sequelize-cli db:migrate"
     }
 }
