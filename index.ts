@@ -1,9 +1,3 @@
-import express from 'express'
-import ddl from './src/repository/transaction/ddl'
-import dotEnv from 'dotenv-safe'
-dotEnv.config({ path: __dirname + '/.env' })
+import expressClass from './src/server/expressClass';
 
-const app = express()
-app.listen(10109, async () => {
-    await ddl()
-})
+expressClass.routeTable()

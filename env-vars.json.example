@@ -1,0 +1,9 @@
+{
+    "SECRET": "NODEMYSQL",
+    "DB" : "sable",
+    "DBPASSWORD": "admin",
+    "DBUSER": "root",
+    "DBADRESS": "localhost",
+    "DBPORT": "3306",
+    "EXPRESSPORT": "10109"
+}

@@ -1,15 +1,24 @@
 import { Sequelize } from 'sequelize'
+import env from '../../env-vars.json'
 
-export default () => {
-    const sequelize = new Sequelize(
-        String(process.env.DB),
-        String(process.env.DBUSER),
-        String(process.env.DBPASSWORD),
-        {
-            host: String(process.env.DBADRESS),
-            port: parseInt(String(process.env.DBPORT)),
-            dialect: 'mysql',
+export default class Connection {
+
+    static sequelize: Sequelize
+
+    static getConnection() {
+        if(!Connection.sequelize){
+            console.log('TESTE')
+            Connection.sequelize = new Sequelize(
+                env.DB,
+                env.DBUSER,
+                env.DBPASSWORD,
+                {
+                    host: env.DBADRESS,
+                    port: parseInt(env.DBPORT),
+                    dialect: 'mysql',
+                }
+            )
         }
-    )
-    return sequelize
+        return Connection.sequelize
+    }
 }
