@@ -7,7 +7,6 @@ export default class Connection {
 
     static getConnection() {
         if(!Connection.sequelize){
-            console.log('TESTE')
             Connection.sequelize = new Sequelize(
                 env.DB,
                 env.DBUSER,
